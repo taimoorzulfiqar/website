@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Northlane Product
 
-## Getting Started
+Consulting website for **Northlane Product** — product management consulting and automation services.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm install
+cp .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contact form (Formspree)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The contact form emails you via [Formspree](https://formspree.io):
 
-## Learn More
+1. Create a free Formspree account
+2. Create a new form that delivers to `taimoorzulfiqar97@gmail.com`
+3. Copy the form ID from the form endpoint (`https://formspree.io/f/xxxxxx`)
+4. Add it to `.env.local`:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+NEXT_PUBLIC_FORMSPREE_ID=xxxxxx
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Restart `npm run dev` and send a test message from the Contact section
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Until this is set, the form shows a clear error and asks people to email you instead.
 
-## Deploy on Vercel
+## Other contact links
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Calendar: [Book a call](https://calendar.app.google/oMdE7WfxB1TJmi4b8)
+- LinkedIn: [taimoor-zulfiqar](https://www.linkedin.com/in/taimoor-zulfiqar)
+- Email: taimoorzulfiqar97@gmail.com
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy
+
+Push to GitHub and deploy on [Vercel](https://vercel.com). Add `NEXT_PUBLIC_FORMSPREE_ID` as an environment variable in the Vercel project settings.
