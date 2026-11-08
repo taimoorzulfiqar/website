@@ -1,5 +1,6 @@
 import { Filmstrip } from "@/components/Filmstrip";
 import { links, site } from "@/lib/content";
+import { asset } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -32,7 +33,7 @@ export function Hero() {
 
         <div className="hero-frame aspect-[4/3]">
           <img
-            src="/images/hero-lane.jpg"
+            src={asset("/images/hero-lane.jpg")}
             alt="Black cards on a pale strip, held together by an orange thread"
             className="hero-photo h-full w-full object-cover"
           />

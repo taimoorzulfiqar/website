@@ -1,3 +1,5 @@
+import { asset } from "@/lib/site";
+
 export const site = {
   brand: "Taimoor Zulfiqar",
   tagline: "Product clarity and automation that ship.",
@@ -22,7 +24,7 @@ export const nav = [
 export const services = [
   {
     title: "Product management consulting",
-    image: "/images/service-product.jpg",
+    image: asset("/images/service-product.jpg"),
     imageAlt: "Torn paper strips in columns, one of them orange",
     description:
       "Roadmaps, user research, onboarding design, experiments, and growth systems that turn product ideas into shipped outcomes.",
@@ -36,7 +38,7 @@ export const services = [
   },
   {
     title: "Automation services",
-    image: "/images/service-automation.jpg",
+    image: asset("/images/service-automation.jpg"),
     imageAlt: "A small paper-and-cord machine with an orange wheel",
     description:
       "AI workflows and integration pipelines that remove manual work — from LLM agents to n8n and MCP systems your team can actually run.",
@@ -54,7 +56,7 @@ export const work = [
   {
     company: "Banks Technologies",
     role: "AI Builder",
-    image: "/images/work-banks.jpg",
+    image: asset("/images/work-banks.jpg"),
     imageAlt: "Blank folders, a floor plan, a ruler, and an orange seal",
     summary:
       "Building Echo, an appraisal management platform that connects lenders, AMCs, and appraisal firms in one system.",
@@ -68,7 +70,7 @@ export const work = [
   {
     company: "ExpoPlatform",
     role: "Product Manager",
-    image: "/images/work-expo.jpg",
+    image: asset("/images/work-expo.jpg"),
     imageAlt: "A blank conference badge crossed by an orange scan line",
     summary:
       "Event SaaS product work focused on lead capture, onboarding, and support efficiency.",
@@ -82,7 +84,7 @@ export const work = [
   {
     company: "Bazaar Technologies",
     role: "Product Manager",
-    image: "/images/work-bazaar.jpg",
+    image: asset("/images/work-bazaar.jpg"),
     imageAlt: "Parcels on a warehouse conveyor, one tied with an orange ribbon",
     summary:
       "Scaled fulfilment operations and shipped AI tools across warehouse and shopping experiences.",
@@ -96,7 +98,7 @@ export const work = [
   {
     company: "Value Link Connect",
     role: "Associate Product Manager",
-    image: "/images/work-value.jpg",
+    image: asset("/images/work-value.jpg"),
     imageAlt: "Stacks of blank cards, one marked with an orange tab",
     summary:
       "Grew revenue and acquisition through billing, redesign, and continuous experimentation.",
