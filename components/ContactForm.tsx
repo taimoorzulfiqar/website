@@ -100,7 +100,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex w-full items-center justify-center bg-signal px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-signal-strong disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        className="inline-flex w-full items-center justify-center bg-signal px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-signal-strong disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
         {status === "loading" ? "Sending…" : "Send message"}
       </button>
