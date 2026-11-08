@@ -16,36 +16,36 @@ export function Contact() {
             {contact.body}
           </p>
 
-          <ul className="mt-8 space-y-4 text-base">
-            <li>
-              <a
-                href={links.emailHref}
-                className="font-medium text-ink underline decoration-rule underline-offset-[5px] hover:decoration-ink"
-              >
-                {links.email}
-              </a>
-            </li>
-            <li>
-              <a
-                href={links.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-ink underline decoration-rule underline-offset-[5px] hover:decoration-ink"
-              >
-                linkedin.com/in/taimoor-zulfiqar
-              </a>
-            </li>
-            <li>
-              <a
-                href={links.calendar}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-quiet underline decoration-rule underline-offset-[5px] transition-colors hover:text-ink hover:decoration-ink"
-              >
-                Book a call (optional)
-              </a>
-            </li>
-          </ul>
+          <div className="mt-8 space-y-4">
+            <a
+              href={links.calendar}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-signal px-6 py-3.5 text-sm font-medium text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-signal-strong"
+            >
+              Book a call
+            </a>
+            <ul className="space-y-3 text-base">
+              <li>
+                <a
+                  href={links.emailHref}
+                  className="font-medium text-ink underline decoration-rule underline-offset-[5px] hover:decoration-ink"
+                >
+                  {links.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={links.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-ink underline decoration-rule underline-offset-[5px] hover:decoration-ink"
+                >
+                  linkedin.com/in/taimoor-zulfiqar
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="bg-sheet p-5 ring-1 ring-rule/90 sm:p-7 sm:py-8">
