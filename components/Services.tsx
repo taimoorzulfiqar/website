@@ -1,45 +1,28 @@
-import { Reveal } from "@/components/Reveal";
 import { services } from "@/lib/content";
 
 export function Services() {
   return (
-    <section id="services" className="border-t border-line py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <Reveal>
-          <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">
-            Services
-          </p>
-          <h2 className="mt-3 max-w-2xl font-display text-3xl font-bold tracking-tight text-fg md:text-4xl">
-            Two ways to move your product forward
-          </h2>
-        </Reveal>
+    <section id="services" className="px-5 py-20 md:px-8 md:py-28">
+      <div className="mx-auto grid max-w-6xl gap-14 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-20">
+        <h2 className="max-w-[12ch] font-display text-[clamp(2.1rem,4vw,3.4rem)] font-medium leading-[1.02] tracking-[-0.03em] text-ink">
+          Two ways to move your product forward
+        </h2>
 
-        <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-16">
-          {services.map((service, index) => (
-            <Reveal key={service.title} delayMs={index * 80}>
-              <article>
-                <h3 className="font-display text-2xl font-semibold tracking-tight text-fg">
-                  {service.title}
-                </h3>
-                <p className="mt-4 text-base leading-relaxed text-fg-muted">
-                  {service.description}
-                </p>
-                <ul className="mt-6 space-y-2.5 border-t border-line pt-6">
-                  {service.points.map((point) => (
-                    <li
-                      key={point}
-                      className="flex gap-3 text-sm text-fg md:text-base"
-                    >
-                      <span
-                        aria-hidden
-                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
-                      />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            </Reveal>
+        <div className="space-y-16">
+          {services.map((service) => (
+            <article key={service.title}>
+              <h3 className="font-display text-[1.65rem] font-medium leading-tight tracking-tight text-ink">
+                {service.title}
+              </h3>
+              <p className="mt-4 max-w-[38rem] text-base leading-relaxed text-quiet">
+                {service.description}
+              </p>
+              <ul className="mt-6 max-w-[34rem] list-disc space-y-2 pl-5 text-base leading-relaxed text-ink marker:text-quiet">
+                {service.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
       </div>

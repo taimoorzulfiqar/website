@@ -1,23 +1,69 @@
 import type { Metadata } from "next";
-import { Manrope, Outfit } from "next/font/google";
+import { Fraunces, Schibsted_Grotesk } from "next/font/google";
+import { links, site } from "@/lib/content";
+import { personJsonLd, seo, websiteJsonLd } from "@/lib/seo";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["500", "600", "700"],
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const schibsted = Schibsted_Grotesk({
+  variable: "--font-schibsted",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Northlane Product — Product & Automation Consulting",
-  description:
-    "Product management consulting and automation services. Help teams decide what to build, then automate the busywork around it.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: seo.title,
+    template: `%s — ${site.brand}`,
+  },
+  description: seo.description,
+  applicationName: site.brand,
+  keywords: seo.keywords,
+  authors: [{ name: site.brand, url: siteUrl }],
+  creator: site.brand,
+  publisher: site.brand,
+  category: "consulting",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "profile",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: site.brand,
+    title: seo.title,
+    description: seo.description,
+    firstName: "Taimoor",
+    lastName: "Zulfiqar",
+    username: "taimoor-zulfiqar",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: seo.title,
+    description: seo.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  other: {
+    "profile:first_name": "Taimoor",
+    "profile:last_name": "Zulfiqar",
+  },
 };
 
 export default function RootLayout({
@@ -26,8 +72,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${manrope.variable} h-full`}>
-      <body className="min-h-full bg-bg font-sans text-fg antialiased">
+    <html lang="en" className={`${fraunces.variable} ${schibsted.variable} h-full`}>
+      <head>
+        <link rel="me" href={links.linkedin} />
+      </head>
+      <body className="min-h-full bg-field font-sans text-ink antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([personJsonLd, websiteJsonLd]),
+          }}
+        />
         {children}
       </body>
     </html>

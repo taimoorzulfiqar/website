@@ -1,9 +1,8 @@
 export const site = {
-  brand: "Northlane Product",
+  brand: "Taimoor Zulfiqar",
   tagline: "Product clarity and automation that ship.",
   support:
-    "Help teams decide what to build, then automate the busywork around it.",
-  founder: "Taimoor Zulfiqar",
+    "I help teams decide what to build, then automate the busywork around it.",
 };
 
 export const links = {
@@ -49,6 +48,18 @@ export const services = [
 
 export const work = [
   {
+    company: "Banks Technologies",
+    role: "AI Builder",
+    summary:
+      "Building Echo, an appraisal management platform that connects lenders, AMCs, and appraisal firms in one system.",
+    outcomes: [
+      "Architecting core modules for order management with full audit trails",
+      "Designing team and workflow assignment for appraisers, supervisors, and coordinators",
+      "Building document management for reports, contracts, and supporting files",
+      "Designing reporting, analytics, and USPAP-aware compliance with role-based access",
+    ],
+  },
+  {
     company: "ExpoPlatform",
     role: "Product Manager",
     summary:
@@ -87,9 +98,9 @@ export const work = [
 ] as const;
 
 export const about = {
-  heading: "The person behind Northlane",
+  heading: "About me",
   body: [
-    "I’m Taimoor Zulfiqar — a product manager and AI builder with 5+ years shipping customer-facing features across SaaS, e-commerce, and fintech.",
+    "I’m a product manager and AI builder with 5+ years shipping customer-facing features across SaaS, e-commerce, and fintech.",
     "I specialise in AI-powered product development: onboarding automation, intelligent workflow tools, and platform architecture. I drive measurable growth through structured experimentation, user research, and cross-functional collaboration.",
   ],
   skills: {

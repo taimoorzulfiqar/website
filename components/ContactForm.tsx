@@ -52,47 +52,47 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="block">
-          <span className="text-sm text-fg-muted">Name</span>
+          <span className="text-sm text-quiet">Name</span>
           <input
             required
             name="name"
             type="text"
             autoComplete="name"
-            className="mt-2 w-full rounded-sm border border-line bg-bg px-3 py-3 text-fg placeholder:text-fg-muted/50"
+            className="mt-2 w-full border border-rule bg-sheet px-3 py-3 text-ink placeholder:text-quiet/60"
             placeholder="Your name"
           />
         </label>
         <label className="block">
-          <span className="text-sm text-fg-muted">Email</span>
+          <span className="text-sm text-quiet">Email</span>
           <input
             required
             name="email"
             type="email"
             autoComplete="email"
-            className="mt-2 w-full rounded-sm border border-line bg-bg px-3 py-3 text-fg placeholder:text-fg-muted/50"
+            className="mt-2 w-full border border-rule bg-sheet px-3 py-3 text-ink placeholder:text-quiet/60"
             placeholder="you@company.com"
           />
         </label>
       </div>
 
       <label className="block">
-        <span className="text-sm text-fg-muted">Company (optional)</span>
+        <span className="text-sm text-quiet">Company (optional)</span>
         <input
           name="company"
           type="text"
           autoComplete="organization"
-          className="mt-2 w-full rounded-sm border border-line bg-bg px-3 py-3 text-fg placeholder:text-fg-muted/50"
+          className="mt-2 w-full border border-rule bg-sheet px-3 py-3 text-ink placeholder:text-quiet/60"
           placeholder="Company name"
         />
       </label>
 
       <label className="block">
-        <span className="text-sm text-fg-muted">Message</span>
+        <span className="text-sm text-quiet">Message</span>
         <textarea
           required
           name="message"
           rows={5}
-          className="mt-2 w-full resize-y rounded-sm border border-line bg-bg px-3 py-3 text-fg placeholder:text-fg-muted/50"
+          className="mt-2 w-full resize-y border border-rule bg-sheet px-3 py-3 text-ink placeholder:text-quiet/60"
           placeholder="What are you trying to ship or automate?"
         />
       </label>
@@ -100,7 +100,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex w-full items-center justify-center rounded-sm bg-accent px-6 py-3.5 text-sm font-medium text-bg transition-colors hover:bg-accent-strong disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        className="inline-flex w-full items-center justify-center bg-signal px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-signal-strong disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
         {status === "loading" ? "Sending…" : "Send message"}
       </button>

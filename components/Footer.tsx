@@ -2,22 +2,22 @@ import { links, site } from "@/lib/content";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line py-10">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 md:flex-row md:items-center md:justify-between md:px-8">
+    <footer className="border-t border-rule px-5 py-10 md:px-8">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="font-display text-lg font-semibold tracking-tight text-fg">
+          <p className="font-display text-xl font-medium tracking-tight text-ink">
             {site.brand}
           </p>
-          <p className="mt-1 text-sm text-fg-muted">
-            Product management consulting & automation
+          <p className="mt-1 text-sm text-quiet">
+            Product management consulting and automation
           </p>
         </div>
-        <div className="flex flex-wrap gap-5 text-sm">
+        <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <a
             href={links.calendar}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-fg-muted transition-colors hover:text-fg"
+            className="text-quiet transition-colors hover:text-ink"
           >
             Book a call
           </a>
@@ -25,13 +25,13 @@ export function Footer() {
             href={links.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-fg-muted transition-colors hover:text-fg"
+            className="text-quiet transition-colors hover:text-ink"
           >
             LinkedIn
           </a>
           <a
             href={links.emailHref}
-            className="text-fg-muted transition-colors hover:text-fg"
+            className="text-quiet transition-colors hover:text-ink"
           >
             Email
           </a>

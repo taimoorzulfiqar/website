@@ -1,58 +1,52 @@
 import { ContactForm } from "@/components/ContactForm";
-import { Reveal } from "@/components/Reveal";
 import { contact, links } from "@/lib/content";
 
 export function Contact() {
   return (
-    <section id="contact" className="border-t border-line py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-16">
-          <Reveal>
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-accent">
-              Contact
-            </p>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-fg md:text-4xl">
-              {contact.heading}
-            </h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-fg-muted md:text-lg">
-              {contact.body}
-            </p>
+    <section id="contact" className="px-5 pb-20 md:px-8 md:pb-28">
+      <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-16">
+        <div>
+          <h2 className="max-w-[14ch] font-display text-[clamp(2.1rem,4vw,3.4rem)] font-medium leading-[1.02] tracking-[-0.03em] text-ink">
+            {contact.heading}
+          </h2>
+          <p className="mt-5 max-w-md text-base leading-relaxed text-quiet md:text-lg">
+            {contact.body}
+          </p>
 
-            <ul className="mt-8 space-y-4 text-base">
-              <li>
-                <a
-                  href={links.calendar}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-fg transition-colors hover:text-accent-strong"
-                >
-                  Book a call
-                </a>
-              </li>
-              <li>
-                <a
-                  href={links.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-fg transition-colors hover:text-accent-strong"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href={links.emailHref}
-                  className="text-fg transition-colors hover:text-accent-strong"
-                >
-                  {links.email}
-                </a>
-              </li>
-            </ul>
-          </Reveal>
+          <ul className="mt-8 space-y-3 text-base">
+            <li>
+              <a
+                href={links.calendar}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink underline decoration-rule underline-offset-[5px] hover:decoration-ink"
+              >
+                Book a call
+              </a>
+            </li>
+            <li>
+              <a
+                href={links.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink underline decoration-rule underline-offset-[5px] hover:decoration-ink"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                href={links.emailHref}
+                className="text-ink underline decoration-rule underline-offset-[5px] hover:decoration-ink"
+              >
+                {links.email}
+              </a>
+            </li>
+          </ul>
+        </div>
 
-          <Reveal delayMs={90}>
-            <ContactForm />
-          </Reveal>
+        <div className="bg-sheet px-5 py-6 sm:px-7 sm:py-8">
+          <ContactForm />
         </div>
       </div>
     </section>
