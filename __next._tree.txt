@@ -1,8 +1,8 @@
-:HL["/website/_next/static/css/db0ddbe340330dfc.css","style"]
+:HL["/website/_next/static/css/8c2eaa5051f42ff6.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap","style"]
 :HL["/website/images/hero-lane.jpg","image"]
 :HL["/website/images/work-expo.jpg","image"]
 :HL["/website/images/work-banks.jpg","image"]
 :HL["/website/images/work-bazaar.jpg","image"]
 :HL["/website/images/work-value.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"An8Vem1U4E-GpsQxDar3H"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"_TZPtWI_o6a3pZ_LwAnn_"}
