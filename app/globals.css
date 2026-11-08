@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 :root {
+  --font-fraunces: "Fraunces", "Iowan Old Style", serif;
+  --font-schibsted: "Schibsted Grotesk", "Avenir Next", sans-serif;
   --field: #e6e8ec;
   --tray: #d5dbe4;
   --sheet: #ffffff;

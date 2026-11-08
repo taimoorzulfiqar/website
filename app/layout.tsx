@@ -1,21 +1,8 @@
 import type { Metadata } from "next";
-import { Fraunces, Schibsted_Grotesk } from "next/font/google";
 import { links, site } from "@/lib/content";
 import { personJsonLd, seo, websiteJsonLd } from "@/lib/seo";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-});
-
-const schibsted = Schibsted_Grotesk({
-  variable: "--font-schibsted",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -72,8 +59,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${schibsted.variable} h-full`}>
+    <html lang="en" className="h-full">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
         <link rel="me" href={links.linkedin} />
       </head>
       <body className="min-h-full bg-field font-sans text-ink antialiased">
