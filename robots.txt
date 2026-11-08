@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://taimoorzulfiqar.github.io/website/sitemap.xml
