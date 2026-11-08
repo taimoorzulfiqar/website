@@ -1,8 +1,24 @@
 "use client";
 
+import { links } from "@/lib/content";
 import { useState, type FormEvent } from "react";
 
 type Status = "idle" | "loading" | "success" | "error";
+
+function configuredFormspreeId(): string | undefined {
+  const id = process.env.NEXT_PUBLIC_FORMSPREE_ID?.trim();
+  if (!id || id === "your_formspree_id") return undefined;
+  return id;
+}
+
+async function parseJsonError(response: Response): Promise<string> {
+  try {
+    const data = (await response.json()) as { error?: string; message?: string };
+    return data.error ?? data.message ?? "Something went wrong. Please try again.";
+  } catch {
+    return "Something went wrong. Please try again.";
+  }
+}
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -13,27 +29,46 @@ export function ContactForm() {
     setStatus("loading");
     setErrorMessage("");
 
-    const formId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
-    if (!formId) {
-      setStatus("error");
-      setErrorMessage(
-        "Contact form is not configured yet. Email taimoorzulfiqar97@gmail.com instead.",
-      );
+    const form = event.currentTarget;
+    const honey = new FormData(form).get("_honey");
+    if (typeof honey === "string" && honey.length > 0) {
+      setStatus("success");
+      form.reset();
       return;
     }
 
-    const form = event.currentTarget;
     const data = new FormData(form);
+    data.delete("_honey");
+    const formspreeId = configuredFormspreeId();
 
     try {
-      const response = await fetch(`https://formspree.io/f/${formId}`, {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
+      if (formspreeId) {
+        const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
+          method: "POST",
+          body: data,
+          headers: { Accept: "application/json" },
+        });
 
-      if (!response.ok) {
-        throw new Error("Something went wrong. Please try again.");
+        if (!response.ok) {
+          throw new Error(await parseJsonError(response));
+        }
+      } else {
+        data.append("_subject", "New message — Taimoor Zulfiqar website");
+        data.append("_template", "table");
+        data.append("_captcha", "false");
+
+        const response = await fetch(
+          `https://formsubmit.co/ajax/${encodeURIComponent(links.email)}`,
+          {
+            method: "POST",
+            body: data,
+            headers: { Accept: "application/json" },
+          },
+        );
+
+        if (!response.ok) {
+          throw new Error(await parseJsonError(response));
+        }
       }
 
       form.reset();
@@ -50,6 +85,11 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      <label className="sr-only" aria-hidden>
+        Leave empty
+        <input type="text" name="_honey" tabIndex={-1} autoComplete="off" />
+      </label>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="block">
           <span className="text-sm text-quiet">Name</span>
@@ -113,7 +153,11 @@ export function ContactForm() {
 
       {status === "error" ? (
         <p className="text-sm text-danger" role="alert">
-          {errorMessage}
+          {errorMessage}{" "}
+          <a href={links.emailHref} className="underline">
+            Email {links.email}
+          </a>{" "}
+          if this keeps failing.
         </p>
       ) : null}
     </form>

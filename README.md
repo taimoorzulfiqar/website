@@ -24,21 +24,17 @@ npm run dev
 
 Open [http://localhost:3000/website/](http://localhost:3000/website/) when using the GitHub Pages base path.
 
-## Contact form (Formspree)
+## Contact form
 
-1. Create a free Formspree account
-2. Create a new form that delivers to `taimoorzulfiqar97@gmail.com`
-3. Copy the form ID from the form endpoint (`https://formspree.io/f/xxxxxx`)
-4. Add it to `.env.local`:
+By default, submissions go to **taimoorzulfiqar97@gmail.com** via [FormSubmit](https://formsubmit.co). The **first successful submit** on production triggers an activation email — click the link in that message so later submissions are delivered.
+
+To use [Formspree](https://formspree.io) instead, set a form ID before build:
 
 ```bash
 NEXT_PUBLIC_FORMSPREE_ID=xxxxxx
-NEXT_PUBLIC_SITE_URL=https://taimoorzulfiqar.com
 ```
 
-5. Restart `npm run dev` and send a test message from the Contact section
-
-Until Formspree is set, the form shows a clear error and asks people to email you instead.
+Rebuild and republish `gh-pages`. Formspree takes precedence when this variable is set.
 
 ## Deploy to Hostinger (file upload)
 
