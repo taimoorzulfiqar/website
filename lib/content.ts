@@ -2,10 +2,18 @@ import { asset } from "@/lib/site";
 
 export const site = {
   brand: "Taimoor Zulfiqar",
-  tagline: "Product clarity and automation that ship.",
+  role: "Product manager & fractional consultant",
+  location: "Karachi, Pakistan",
+  tagline: "AI products and automations that ship.",
   support:
-    "I help teams decide what to build, then automate the busywork around it.",
+    "4+ years shipping AI and automation across SaaS, e-commerce, and fintech. I help teams scope what matters, then build MVPs, internal tools, and workflows end to end.",
 };
+
+export const highlights = [
+  { label: "Experience", value: "4+ years in product" },
+  { label: "Experimentation", value: "50+ A/B tests · 15% conversion lift" },
+  { label: "Based in", value: "Karachi · open to remote & relocation" },
+] as const;
 
 export const links = {
   calendar: "https://calendar.app.google/oMdE7WfxB1TJmi4b8",
@@ -23,90 +31,95 @@ export const nav = [
 
 export const services = [
   {
-    title: "Product management consulting",
+    title: "Fractional & freelance builds",
     image: asset("/images/service-product.jpg"),
     imageAlt: "Torn paper strips in columns, one of them orange",
     description:
-      "Roadmaps, user research, onboarding design, experiments, and growth systems that turn product ideas into shipped outcomes.",
+      "End-to-end delivery of MVPs, internal tools, AI features, and automations — from discovery through launch.",
     points: [
-      "Roadmapping and prioritization",
-      "User research and discovery",
-      "Onboarding and funnel optimization",
-      "A/B testing and NPS programs",
-      "Subscription and billing workflows",
+      "MVPs and internal tools",
+      "AI features and LLM integrations",
+      "n8n and MCP automation pipelines",
+      "OCR and document workflows",
+      "Payments, onboarding, and core product flows",
     ],
   },
   {
-    title: "Automation services",
+    title: "Product management",
     image: asset("/images/service-automation.jpg"),
     imageAlt: "A small paper-and-cord machine with an orange wheel",
     description:
-      "AI workflows and integration pipelines that remove manual work — from LLM agents to n8n and MCP systems your team can actually run.",
+      "Open to full-time and fractional product roles — remote or with visa sponsorship. Roadmaps, research, and experiments that turn ideas into shipped outcomes.",
     points: [
-      "LLM integrations and AI agents",
-      "n8n and MCP automation pipelines",
-      "OCR and document workflows",
-      "Sentiment and request triage",
-      "Product architecture for AI features",
+      "Fractional and full-time PM engagements",
+      "Roadmapping and prioritization",
+      "Onboarding and time-to-value",
+      "A/B testing and growth experiments",
+      "Cross-functional delivery with engineering",
     ],
   },
 ] as const;
 
 export const work = [
   {
-    company: "Banks Technologies",
-    role: "AI Builder",
-    image: asset("/images/work-banks.jpg"),
-    imageAlt: "Blank folders, a floor plan, a ruler, and an orange seal",
-    summary:
-      "Building Echo, an appraisal management platform that connects lenders, AMCs, and appraisal firms in one system.",
-    outcomes: [
-      "Architecting core modules for order management with full audit trails",
-      "Designing team and workflow assignment for appraisers, supervisors, and coordinators",
-      "Building document management for reports, contracts, and supporting files",
-      "Designing reporting, analytics, and USPAP-aware compliance with role-based access",
-    ],
-  },
-  {
     company: "ExpoPlatform",
-    role: "Product Manager",
+    role: "Product Owner",
+    meta: "London event-tech · Remote from Karachi since Dec 2025",
+    current: true,
     image: asset("/images/work-expo.jpg"),
     imageAlt: "A blank conference badge crossed by an orange scan line",
     summary:
-      "Event SaaS product work focused on lead capture, onboarding, and support efficiency.",
+      "Event SaaS for organisers and exhibitors — onboarding, support, and lead capture.",
     outcomes: [
-      "Launched OCR badge scanning that doubled lead generation capacity",
-      "Cut time-to-value by 50% with an AI-assisted onboarding journey",
-      "Reduced support calls by 40% through LLM agent workflows",
-      "Saved TAMs 40 hours/week with AI sentiment triage",
+      "Cut time-to-value 50% with an LLM-agent-based AI onboarding journey",
+      "Reduced support calls 40% through agent-led workflows",
+      "Built a Claude-based sentiment tracker that saves account managers 40 hours/week",
+      "Shipped OCR features for faster lead capture at events",
+    ],
+  },
+  {
+    company: "Banks Technologies",
+    role: "Fractional Product Manager",
+    meta: "Echo — appraisal management platform",
+    image: asset("/images/work-banks.jpg"),
+    imageAlt: "Blank folders, a floor plan, a ruler, and an orange seal",
+    summary:
+      "Building Echo solo end to end with Cursor and Claude Code — connecting lenders, AMCs, and appraisal firms.",
+    outcomes: [
+      "Owned product and delivery end to end on a greenfield platform",
+      "Integrated Stripe payments (Visa/Mastercard) for order and billing flows",
+      "Designed order management, workflows, and document handling with audit trails",
+      "Built reporting, analytics, and USPAP-aware compliance with role-based access",
     ],
   },
   {
     company: "Bazaar Technologies",
     role: "Product Manager",
+    meta: "B2B marketplace",
     image: asset("/images/work-bazaar.jpg"),
     imageAlt: "Parcels on a warehouse conveyor, one tied with an orange ribbon",
     summary:
-      "Scaled fulfilment operations and shipped AI tools across warehouse and shopping experiences.",
+      "B2B marketplace products and AI features across fulfilment and warehouse operations.",
     outcomes: [
-      "Scaled B2C fulfilment from 1,000 to 3,000+ orders/day",
-      "Built AI fulfilment workflows that auto-update delivery ETAs",
-      "Automated inventory uploads via n8n and MCP pipelines",
-      "Boosted CTR and conversion by 50% with an AI shopping assistant",
+      "Scaled fulfilment from 1,000 to 3,000+ orders/day",
+      "Automated inventory uploads with n8n and MCP pipelines — out-of-stock incidents to zero",
+      "Built an AI workflow that updates delivery ETAs from real-time warehouse capacity",
+      "Shipped an AI invoice parser for operations teams",
     ],
   },
   {
-    company: "Value Link Connect",
+    company: "ValueLink",
     role: "Associate Product Manager",
+    meta: "Real-estate appraisal software · 2 years",
     image: asset("/images/work-value.jpg"),
     imageAlt: "Stacks of blank cards, one marked with an orange tab",
     summary:
-      "Grew revenue and acquisition through billing, redesign, and continuous experimentation.",
+      "Appraisal management software for lenders and valuation firms.",
     outcomes: [
-      "Drove a 20% revenue uplift with new subscription plans",
-      "Improved NPS by 20% through a full UI/UX redesign",
-      "Lifted conversion by 15% across 50+ A/B tests",
-      "Reached 100% adoption of User Scorecard within 2 months",
+      "Improved order turnaround time by 20%",
+      "Increased development velocity by 30% through clearer specs and delivery rhythm",
+      "Delivered integrations with lending systems (LOS)",
+      "Ran structured experiments and roadmap work across core ordering flows",
     ],
   },
 ] as const;
@@ -114,16 +127,17 @@ export const work = [
 export const about = {
   heading: "About me",
   body: [
-    "I’m a product manager and AI builder with 5+ years shipping customer-facing features across SaaS, e-commerce, and fintech.",
-    "I specialise in AI-powered product development: onboarding automation, intelligent workflow tools, and platform architecture. I drive measurable growth through structured experimentation, user research, and cross-functional collaboration.",
+    "I’m a product manager with 4+ years shipping AI and automation products across SaaS, e-commerce, and fintech.",
+    "I focus on onboarding, intelligent workflows, and features teams can run in production — backed by research, experimentation, and close work with engineering.",
+    "I hold a finance degree from IBA, Karachi, and I’m based in Karachi. I also built a project-management tool with Claude Code and MCP for my own delivery stack.",
   ],
   skills: {
     product: [
       "Roadmapping",
       "User research",
       "A/B testing",
-      "NPS & funnel optimisation",
       "Onboarding design",
+      "Funnel optimisation",
       "Subscription & billing",
     ],
     automation: [
@@ -138,6 +152,6 @@ export const about = {
 };
 
 export const contact = {
-  heading: "Let’s talk about what to build next",
-  body: "Share a bit about your product or workflow. I’ll get back to you — or book a call if you’d rather talk live.",
+  heading: "Get in touch",
+  body: "Tell me what you’re building — MVP, internal tool, AI feature, or fractional PM support. I reply by email, or you can reach me on LinkedIn.",
 };

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { links, site } from "@/lib/content";
-import { personJsonLd, seo, websiteJsonLd } from "@/lib/seo";
+import { openGraphImage, personJsonLd, seo, websiteJsonLd } from "@/lib/seo";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -27,6 +27,14 @@ export const metadata: Metadata = {
     siteName: site.brand,
     title: seo.title,
     description: seo.description,
+    images: [
+      {
+        url: openGraphImage,
+        width: 1200,
+        height: 900,
+        alt: "Taimoor Zulfiqar — product manager and fractional consultant",
+      },
+    ],
     firstName: "Taimoor",
     lastName: "Zulfiqar",
     username: "taimoor-zulfiqar",
@@ -35,6 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: seo.title,
     description: seo.description,
+    images: [openGraphImage],
   },
   robots: {
     index: true,
@@ -74,6 +83,12 @@ export default function RootLayout({
         <link rel="me" href={links.linkedin} />
       </head>
       <body className="min-h-full bg-field font-sans text-ink antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-sheet focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-ink focus:ring-2 focus:ring-signal"
+        >
+          Skip to content
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -9,13 +9,20 @@ npm install
 cp .env.example .env.local
 ```
 
-Edit `.env.local` with your Formspree ID, then:
+Edit `.env.local` with your Formspree ID. For GitHub Pages (`taimoorzulfiqar.github.io/website`), also set:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://taimoorzulfiqar.github.io/website
+NEXT_PUBLIC_BASE_PATH=/website
+```
+
+Then:
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000/website/](http://localhost:3000/website/) when using the GitHub Pages base path.
 
 ## Contact form (Formspree)
 

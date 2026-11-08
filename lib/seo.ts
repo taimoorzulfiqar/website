@@ -1,23 +1,26 @@
 import { links, site } from "@/lib/content";
-import { siteUrl } from "@/lib/site";
+import { asset, siteUrl } from "@/lib/site";
 
 export const seo = {
-  title: "Taimoor Zulfiqar — Product Manager & Automation Consultant",
+  title: "Taimoor Zulfiqar — Product Manager & Fractional Consultant",
   description:
-    "I’m Taimoor Zulfiqar, a product manager and AI builder. I help teams with product management consulting and automation — from roadmaps and onboarding to AI workflows that ship.",
+    "Taimoor Zulfiqar is a product manager and fractional consultant based in Karachi. He ships AI products, automations, and MVPs across SaaS, e-commerce, and fintech — currently Product Owner at ExpoPlatform.",
   keywords: [
     "Taimoor Zulfiqar",
     "product manager",
+    "fractional product manager",
     "product management consultant",
     "automation consultant",
     "AI product development",
-    "AI automation",
+    "freelance product manager",
+    "Karachi",
     "n8n automation",
     "LLM integrations",
-    "product strategy",
-    "freelance product manager",
+    "MCP",
   ],
 };
+
+export const openGraphImage = asset("/images/hero-lane.jpg");
 
 export const personJsonLd = {
   "@context": "https://schema.org",
@@ -28,18 +31,20 @@ export const personJsonLd = {
   familyName: "Zulfiqar",
   url: siteUrl,
   email: links.email,
-  image: `${siteUrl}/favicon.ico`,
+  image: `${siteUrl}${asset("/images/hero-lane.jpg")}`,
   sameAs: [links.linkedin],
-  jobTitle: ["Product Manager", "AI Builder", "Automation Consultant"],
+  jobTitle: ["Product Owner", "Product Manager", "Fractional Consultant"],
   description: seo.description,
+  homeLocation: {
+    "@type": "Place",
+    name: "Karachi, Pakistan",
+  },
   alumniOf: {
     "@type": "CollegeOrUniversity",
     name: "Institute of Business Administration, Karachi",
   },
   knowsAbout: [
     "Product management",
-    "Product strategy",
-    "User research",
     "AI product development",
     "Automation",
     "n8n",
@@ -51,9 +56,9 @@ export const personJsonLd = {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "Product management consulting",
+        name: "Fractional & freelance product builds",
         description:
-          "Roadmaps, research, onboarding, experiments, and growth systems.",
+          "MVPs, internal tools, AI features, and automations delivered end to end.",
         provider: { "@id": `${siteUrl}/#person` },
       },
     },
@@ -61,9 +66,9 @@ export const personJsonLd = {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: "Automation services",
+        name: "Product management",
         description:
-          "AI workflows, n8n/MCP pipelines, and LLM tools that cut manual work.",
+          "Full-time and fractional product leadership — remote or with visa sponsorship.",
         provider: { "@id": `${siteUrl}/#person` },
       },
     },
